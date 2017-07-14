@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'regipys',
     'users',
+    'bootstrap3',
+    'bootstrap_themes',
 ]
 
 MIDDLEWARE = [

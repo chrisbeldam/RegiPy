@@ -1,0 +1,30 @@
+{% load bootstrap3 %} {% load bootstrap_themes %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <title>{% block title %}{%endblock title %} - RegiPy</title>
+  {% bootstrap_javascript %}
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/paper/bootstrap.min.css">
+  {% block style %} {% endblock style %}
+</head>
+
+<body>
+  <div class="container">
+      <nav class="navbar navbar-inverse">
+      </nav>
+      <div class="page-header">
+        <h4>{% block header %}{% endblock header %}<h4>
+      </div>
+  </div>
+  <div class="container" id="block" style="width:100%">
+    {% block content %}{% endblock content %}
+  </div>
+</div>
+</body>
+
+</html>
