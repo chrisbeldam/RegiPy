@@ -19,3 +19,4 @@ build/
 tests/report/
 rp_env
 db.sqlite3
+migrations
