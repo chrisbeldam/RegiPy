@@ -15,9 +15,53 @@
 
 <body>
   <div class="container">
-      <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">RegiPy</a>
+            <ul class="nav navbar-nav">
+              {% if user.is_authenticated %}
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Batches<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Batches</a></li>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Peptides<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Peptides</a></li>
+                    <li class="divider"><li>
+                    <li><a href="#"><span class="glyphicon glyphicon-search"></span> Peptide Search</a></li>
+                    {% if user.groups.all.0.name == "staff" %}
+                    <li class="divider"></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Peptides</a></li>
+                    {% endif %}
+                  </ul>
+                </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Uniprot<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#"><span class="glyphicon glyphicon-search"></span> Uniprot Search</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-search"></span> Name Search</a></li>
+                </ul>
+              </li>
+              <li><a href="#"><span class="glyphicon glyphicon-search"></span> Catalogue Search</a></li>
+              {% if user.groups.all.0.name == "staff" %}
+              <li><a href="#"><span class="glyphicon glyphicon-search"></span> Records</a></li>
+              {% endif %}
+              {% endif %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              {% if user.is_authenticated %}
+              <li><a href="{% url 'users:logout' %}"><span class="glyphicon glyphicon-log-out"></span> Log Out {{ user.username }}</a></li>
+              {% else %}
+              <li><a href="{% url 'users:login' %}"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
       </nav>
-      <div class="page-header">
+      <div class="page-header" style="margin-top:10%">
         <h4>{% block header %}{% endblock header %}<h4>
       </div>
   </div>
