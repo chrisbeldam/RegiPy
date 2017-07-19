@@ -8,22 +8,9 @@ Home Page
 {% endblock title %}
 
 {% block content %}
-{% if user.is_authenticated %}
 <div class="jumbotron jumbotron-fluid" style="width:50%; margin:0 auto; text-align:center">
   <h2>Welcome To RegiPy</h2>
 </div>
-{% else %}
-<div class="panel panel-danger" id="logIn" style="width: 50%; margin:0 auto;">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">Log In Required</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    <h3>You need to log in to access this site.</h3>
-    <h5>Please do so via the navbar or by clicking:
-    <br>
-    <a href="{% url 'users:login' %}" class="btn btn-primary" style="text-align:center; margin-top:10px; margin-bottom:10px">Log In</a></h5>
-  </div>
-{% endif %}
 
 
 {% endblock content %}
