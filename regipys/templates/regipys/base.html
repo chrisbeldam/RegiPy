@@ -22,33 +22,21 @@
             <ul class="nav navbar-nav">
               {% if user.is_authenticated %}
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Batches<span class="caret"></span></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Batches</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Student</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-search"></span> Student Search</a></li>
+                </ul>
                 </li>
                 <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Peptides<span class="caret"></span></a>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Class <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Peptides</a></li>
-                    <li class="divider"><li>
-                    <li><a href="#"><span class="glyphicon glyphicon-search"></span> Peptide Search</a></li>
-                    {% if user.groups.all.0.name == "staff" %}
+                    <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Class</a></li>
                     <li class="divider"></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Peptides</a></li>
-                    {% endif %}
+                    <li><a href="#"><span class="glyphicon glyphicon-search"></span> Class Search</a></li>
                   </ul>
                 </li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Uniprot<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#"><span class="glyphicon glyphicon-search"></span> Uniprot Search</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-search"></span> Name Search</a></li>
-                </ul>
-              </li>
-              <li><a href="#"><span class="glyphicon glyphicon-search"></span> Catalogue Search</a></li>
-              {% if user.groups.all.0.name == "staff" %}
-              <li><a href="#"><span class="glyphicon glyphicon-search"></span> Records</a></li>
-              {% endif %}
               {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
